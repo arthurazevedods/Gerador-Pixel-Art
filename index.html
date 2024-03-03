@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Gerador de Pixel Art</title>
+</head>
+
+<body>
+    <div class="menu-buttons d-flex flex-column">
+        <button class="btn menu-button m-1" id="submit-grid" data-bs-toggle="modal" data-bs-target="#gridModal">
+            <i class="fa-solid fa-plus fa-2x menu_button_icon"></i>
+        </button>
+
+        <button class="btn menu-button m-1" id="clear-grid">
+
+            <i class="fa-solid fa-broom fa-2x menu_button_icon"></i>
+
+        </button>
+        <button class="btn menu-button m-1" id="erase-btn">
+
+            <i class="fa-solid fa-eraser fa-2x menu_button_icon"></i>
+
+        </button>
+        <button class="btn menu-button m-1" id="paint-btn">
+
+            <i class="fa-solid fa-paintbrush fs-4 menu_button_icon"></i>
+
+        </button>
+        <button class="btn menu-button m-1 menu_button_icon">
+            <i class="fa-solid fa-paint-roller" id="paint-roller"></i>
+            <input class="input_color fs-4" type="color" placeholder="cor" id="color-input">
+        </button>
+
+    </div>
+    <div class="wrapper w-50 px-3 py-5">
+        <div class="containerGrid"></div>
+    </div>
+
+
+    <!-- Modal -->
+    <!-- Modal de Criação de Grid -->
+    <div class="modal fade" id="gridModal" tabindex="-1" aria-labelledby="gridModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="gridModalLabel">Definir Dimensões da Grade</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="width-range" class="form-label">Largura (1-64)</label>
+                        <input type="number" class="form-control" id="modal-width-range" min="1" max="64" value="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="height-range" class="form-label">Altura (1-64)</label>
+                        <input type="number" class="form-control" id="modal-height-range" min="1" max="64" value="1">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="modal-submit-grid">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
